@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:user_profile_page/view/login_page/login_page.dart';
+import 'package:user_profile_page/view/login_page/terms%20of%20service/terms_of_service_page.dart';
+import 'package:user_profile_page/view/otp_verification_page/otp_verification_page.dart';
 import 'package:user_profile_page/view/settings_screen/settings_screen.dart';
 
 void main() {
@@ -13,7 +16,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SettingsScreen(),
+      home: LoginPage(),
     );
   }
 }
