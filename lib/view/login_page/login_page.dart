@@ -175,7 +175,7 @@ class LoginPage extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                                builder: (context) => OtpVerificationPage(),
+                                builder: (context) => OtpVerificationPage(phonenumber: phoneNoController.text,),
                               ),
                             );
                           }

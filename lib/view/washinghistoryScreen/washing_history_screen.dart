@@ -6,46 +6,46 @@ class WashingHistoryScreen extends StatelessWidget {
 
   final List<Map<String, String>> washingHistory = const [
     {
-      "washer": "Washer",
+      "Hubname": "Kerala Hostel Kochi",
       "status": "Completed",
-      "id": "01",
-      "area": "KunnamKulam",
-      "weight": "7",
+      "id": "#123456",
+      "dateTime": "12/02/2024 10:20 am",
+      "price": "125.00",
     },
     {
-      "washer": "Dryer ",
+      "Hubname": "Trivandrum Hostel",
       "status": "Completed",
-      "id": "01",
-      "area": "KunnamKulam",
-      "weight": "7",
+      "id": "#234567",
+      "dateTime": "12/02/2024 11:45 am",
+      "price": "135.50",
     },
     {
-      "washer": "Washer",
+      "Hubname": "Kannur Hostel",
       "status": "Completed",
-      "id": "01",
-      "area": "KunnamKulam",
-      "weight": "7",
+      "id": "#345678",
+      "dateTime": "13/02/2024 09:30 am",
+      "price": "140.75",
     },
     {
-      "washer": "Washer",
+      "Hubname": "Calicut Laundry Hub",
       "status": "Completed",
-      "id": "01",
-      "area": "KunnamKulam",
-      "weight": "8",
+      "id": "#456789",
+      "dateTime": "13/02/2024 01:15 pm",
+      "price": "150.00",
     },
     {
-      "washer": "Washer",
+      "Hubname": "Thrissur Laundry Center",
       "status": "Completed",
-      "id": "01",
-      "area": "KunnamKulam",
-      "weight": "7",
+      "id": "#567890",
+      "dateTime": "14/02/2024 08:50 am",
+      "price": "125.00",
     },
     {
-      "washer": "Washer",
+      "Hubname": "Alleppey Hostel Service",
       "status": "Completed",
-      "id": "01",
-      "area": "KunnamKulam",
-      "weight": "7",
+      "id": "#678901",
+      "dateTime": "14/02/2024 10:00 am",
+      "price": "115.25",
     },
   ];
 
@@ -77,7 +77,6 @@ class WashingHistoryScreen extends StatelessWidget {
                   itemBuilder: (context, index) {
                     final item = washingHistory[index];
                     return Container(
-                      height: 97,
                       width: double.infinity,
                       decoration: BoxDecoration(
                         color:
@@ -91,12 +90,52 @@ class WashingHistoryScreen extends StatelessWidget {
                           children: [
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Text(
-                                      item["washer"]!,
+                                      "Hub Name",
+                                      style: GoogleFonts.montserrat(
+                                        textStyle: TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w500,
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(height: 14),
+                                    Text(
+                                      item["Hubname"]!,
+                                      style: GoogleFonts.montserrat(
+                                        textStyle: TextStyle(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w400,
+                                          color: Colors.black.withOpacity(0.6),
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 25,
+                                    ),
+                                    Text(
+                                      item["dateTime"]!,
+                                      style: GoogleFonts.montserrat(
+                                        textStyle: TextStyle(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w400,
+                                          color: Colors.black,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Column(
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Text(
+                                      "Machine ",
                                       style: GoogleFonts.montserrat(
                                         textStyle: TextStyle(
                                           fontSize: 16,
@@ -108,32 +147,6 @@ class WashingHistoryScreen extends StatelessWidget {
                                     SizedBox(height: 14),
                                     Text(
                                       item["id"]!,
-                                      style: GoogleFonts.montserrat(
-                                        textStyle: TextStyle(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w500,
-                                          color: Colors.black,
-                                        ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      "Location",
-                                      style: GoogleFonts.montserrat(
-                                        textStyle: TextStyle(
-                                          fontSize: 16,
-                                          fontWeight: FontWeight.w500,
-                                          color: Colors.black,
-                                        ),
-                                      ),
-                                    ),
-                                    SizedBox(height: 14),
-                                    Text(
-                                      item["area"]!,
                                       style: GoogleFonts.montserrat(
                                         textStyle: TextStyle(
                                           fontSize: 14,
@@ -169,14 +182,26 @@ class WashingHistoryScreen extends StatelessWidget {
                                     ),
                                     SizedBox(height: 9),
                                     Text(
-                                      "(${item["weight"]!} kg)",
+                                      "QK WASH",
                                       style: GoogleFonts.montserrat(
                                         textStyle: TextStyle(
-                                          fontSize: 14,
+                                          fontSize: 12,
                                           fontWeight: FontWeight.w600,
                                           color:
                                               Color.fromRGBO(55, 137, 244, 1),
                                         ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 20,
+                                    ),
+                                    Text(
+                                      item["price"]!,
+                                      style: GoogleFonts.montserrat(
+                                        textStyle: TextStyle(
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.w500,
+                                            color: Colors.black),
                                       ),
                                     ),
                                   ],

@@ -3,8 +3,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:user_profile_page/view/settings_screen/settings_screen.dart';
 
 class OtpVerificationPage extends StatefulWidget {
-  const OtpVerificationPage({super.key});
-
+  const OtpVerificationPage({super.key, required this.phonenumber});
+  final phonenumber;
   @override
   State<OtpVerificationPage> createState() => _OtpVerificationPageState();
 }
@@ -27,7 +27,8 @@ class _OtpVerificationPageState extends State<OtpVerificationPage> {
 
   // Method to verify OTP
   void verifyOtp() {
-    String enteredOtp = otpControllers.map((controller) => controller.text).join();
+    String enteredOtp =
+        otpControllers.map((controller) => controller.text).join();
 
     if (enteredOtp == correctOtp) {
       Navigator.push(
@@ -37,18 +38,19 @@ class _OtpVerificationPageState extends State<OtpVerificationPage> {
         ),
       );
     } else {
-       for (var controller in otpControllers) {
-      controller.clear();
-    }
+      for (var controller in otpControllers) {
+        controller.clear();
+      }
       ScaffoldMessenger.of(context).showSnackBar(
         const SnackBar(content: Text('Incorrect OTP. Please try again.')),
-        
       );
     }
   }
 
   @override
   Widget build(BuildContext context) {
+    String lastFourDigits =
+        widget.phonenumber.substring(widget.phonenumber.length - 4);
     return SafeArea(
       child: Scaffold(
         body: Padding(
@@ -86,7 +88,7 @@ class _OtpVerificationPageState extends State<OtpVerificationPage> {
                         ),
                         children: [
                           TextSpan(
-                            text: '1234.',
+                            text: '$lastFourDigits.',
                             style: GoogleFonts.montserrat(
                               textStyle: const TextStyle(
                                 fontSize: 14,
@@ -149,7 +151,7 @@ class _OtpVerificationPageState extends State<OtpVerificationPage> {
                     ),
                     const SizedBox(height: 20),
                     InkWell(
-                      onTap: verifyOtp, 
+                      onTap: verifyOtp,
                       child: Container(
                         height: 50,
                         width: 161,
